@@ -65,8 +65,8 @@ with col_7:
 last_5over_runs = st.number_input('Runs scored in last 5 overs')
 
 if st.button('Predict Score'):
-    balls_done = (overs*6) + ball
-    wickets_left = 10 -wickets
+    balls_done = (over*6) + over_ball
+    wickets_left = 10 - wickets
     crr = (current_score*6)/balls_done
 
     input_df = pd.DataFrame(
