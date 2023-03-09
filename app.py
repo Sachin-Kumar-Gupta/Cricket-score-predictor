@@ -22,7 +22,7 @@ teams = ['Mumbai Indians','Royal Challengers Bangalore','Kolkata Knight Riders',
          'Gujarat Lions','Punjab Kings','Gujarat Titans','Rising Pune Supergiant',
          'Lucknow Super Giants','Kochi Tuskers Kerala','Rising Pune Supergiants']
 
-venues = ["Wankhede Stadium ","Eden Gardens","M Chinnaswamy Stadium","MA Chidambaram Stadium",
+venues = ["Wankhede Stadium","Eden Gardens","M Chinnaswamy Stadium","MA Chidambaram Stadium",
          "Rajiv Gandhi International Stadium","Feroz Shah Kotla","Punjab Cricket Association IS Bindra Stadium",
          "Dubai International Cricket Stadium","Sawai Mansingh Stadium","Dr DY Patil Sports Academy",
          "Maharashtra Cricket Association Stadium","Sheikh Zayed Stadium","Sharjah Cricket Stadium",
