@@ -34,7 +34,6 @@ venues = ["Wankhede Stadium ","Eden Gardens","M Chinnaswamy Stadium","MA Chidamb
          "Narendra Modi Stadium","Newlands","Shaheed Veer Narayan Singh International Stadium",
          "Nehru Stadium","Green Park","Vidarbha Cricket Association Stadium","De Beers Diamond Oval",
          "Buffalo Park","OUTsurance Oval"]
-innings = [1,2]
 overs = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
 balls = [1,2,3,4,5,6]
 
@@ -60,7 +59,7 @@ with col_5:
 with col_6:
     wickets = st.number_input('Wickets out')
 with col_7:
-    innings = st.number_input('Inning', value=1, step=1, max_value = 2)
+    innings = st.radio('Inning', [1, 2], index=0)
     
 last_5over_runs = st.number_input('Runs scored in last 5 overs')
 
@@ -70,16 +69,16 @@ if st.button('Predict Score'):
     crr = (current_score*6)/balls_done
 
     input_df = pd.DataFrame({
-        'Venue': [Venue],
-        'Inning': [innings],
+        'venue': [Venue],
+        'innings': [innings],
         'batting_team': [batting_team],
         'bowling_team': [bowling_team],
         'current_score': [current_score],
         'wickets': [wickets],
-        'Over': [over],
-        'Ball': [over_ball],
+        'over': [over],
+        'over_ball': [over_ball],
         'crr': [crr],
-        'last_five': [last_5over_runs]
+        'last_5over_runs': [last_5over_runs]
     })
     result = pl.predict(input_df)
     st.header("Predicted Score - " + str(int(result[0])))
