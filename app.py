@@ -69,7 +69,17 @@ if st.button('Predict Score'):
     wickets_left = 10 - wickets
     crr = (current_score*6)/balls_done
 
-    input_df = pd.DataFrame(
-     {'Venue':Venue,'Inning':[innings],'batting_team': [batting_team], 'bowling_team': [bowling_team], 'current_score': [current_score],'wickets': [wickets],'Over': [over],'Ball': [over_ball], 'crr': [crr], 'last_five': [last_5over_runs]})
+    input_df = pd.DataFrame({
+        'Venue': [Venue],
+        'Inning': [innings],
+        'batting_team': [batting_team],
+        'bowling_team': [bowling_team],
+        'current_score': [current_score],
+        'wickets': [wickets],
+        'Over': [over],
+        'Ball': [over_ball],
+        'crr': [crr],
+        'last_five': [last_5over_runs]
+    })
     result = pl.predict(input_df)
     st.header("Predicted Score - " + str(int(result[0])))
