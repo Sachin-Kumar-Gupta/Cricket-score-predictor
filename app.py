@@ -4,6 +4,15 @@ import pandas as pd
 import numpy as np
 import xgboost
 from xgboost import XGBRegressor
+import zipfile
+
+# specify the path of the zip file
+zip_path = 'pl.zip'
+
+# create a ZipFile object
+with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+    # extract all files to a directory
+    zip_ref.extractall('path/to/extract/to')
 
 pl = pickle.load(open('pl.pkl','rb'))
 
