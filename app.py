@@ -60,7 +60,7 @@ with col_5:
 with col_6:
     wickets = st.number_input('Wickets out')
 with col_7:
-    innings = st.number_input('Inning', , value=1, step=1, max_value = 2)
+    innings = st.number_input('Inning', value=1, step=1, max_value = 2)
     
 last_5over_runs = st.number_input('Runs scored in last 5 overs')
 
