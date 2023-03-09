@@ -40,7 +40,7 @@ balls = [1,2,3,4,5,6]
 
 st.title('Score Predictor')
 
-col_1, col_2 = st.beta_columns(2)
+col_1, col_2 = st.columns(2)
 
 with col_1:
     batting_team = st.selectbox('Select batting team',sorted(teams))
@@ -49,20 +49,20 @@ with col_2:
 
 Venue = st.selectbox('Select city',sorted(venues))
 
-col_3,col_4,col_5,col_6, col_7 = st.beta_columns(5)
+col_3,col_4,col_5,col_6, col_7 = st.columns(5)
 
 with col_3:
-    current_score = st.number_input('Current Score')
+    current_score = st.number_input('Current Score', value=0, step=1)
 with col_4:
-    overs = st.selectbox('Overs done(works for over>5)', sorted(overs))
+    over = st.selectbox('Overs done(works for over>5)', sorted(overs), max_value = 20)
 with col_5:
-    ball = st.selectbox('Ball of the over', sorted(balls))
+    over_ball = st.selectbox('Ball of the over', sorted(balls), max_value = 6)
 with col_6:
     wickets = st.number_input('Wickets out')
 with col_7:
-    inning = st.number_input('Inning')
+    innings = st.number_input('Inning', , value=1, step=1, max_value = 2)
     
-last_five = st.number_input('Runs scored in last 5 overs')
+last_5over_runs = st.number_input('Runs scored in last 5 overs')
 
 if st.button('Predict Score'):
     balls_done = (overs*6) + ball
@@ -70,6 +70,6 @@ if st.button('Predict Score'):
     crr = (current_score*6)/balls_done
 
     input_df = pd.DataFrame(
-     {'Venue':Venue,'Inning':[inning],'batting_team': [batting_team], 'bowling_team': [bowling_team], 'current_score': [current_score],'wickets': [wickets],'Over': [overs],'Ball': [ball], 'crr': [crr], 'last_five': [last_five]})
+     {'Venue':Venue,'Inning':[innings],'batting_team': [batting_team], 'bowling_team': [bowling_team], 'current_score': [current_score],'wickets': [wickets],'Over': [over],'Ball': [over_ball], 'crr': [crr], 'last_five': [last_5over_runs]})
     result = pl.predict(input_df)
     st.header("Predicted Score - " + str(int(result[0])))
