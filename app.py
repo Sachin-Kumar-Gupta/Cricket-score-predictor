@@ -54,9 +54,9 @@ col_3,col_4,col_5,col_6, col_7 = st.columns(5)
 with col_3:
     current_score = st.number_input('Current Score', value=0, step=1)
 with col_4:
-    over = st.selectbox('Overs done(works for over>5)', sorted(overs), max_value = 20)
+    over = st.selectbox('Overs done(works for over>5)', sorted(overs))
 with col_5:
-    over_ball = st.selectbox('Ball of the over', sorted(balls), max_value = 6)
+    over_ball = st.selectbox('Ball of the over', sorted(balls))
 with col_6:
     wickets = st.number_input('Wickets out')
 with col_7:
