@@ -12,7 +12,7 @@ zip_path = 'pl.zip'
 # create a ZipFile object
 with zipfile.ZipFile(zip_path, 'r') as zip_ref:
     # extract all files to a directory
-    zip_ref.extractall('path/to/extract/to')
+    zip_ref.extractall()
 
 pl = pickle.load(open('pl.pkl','rb'))
 
