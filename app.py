@@ -16,24 +16,19 @@ with zipfile.ZipFile(zip_path, 'r') as zip_ref:
 
 pl = pickle.load(open('pl.pkl','rb'))
 
-teams = ['Mumbai Indians','Royal Challengers Bangalore','Kolkata Knight Riders',
-         'Chennai Super Kings','Rajasthan Royals','Kings XI Punjab','Delhi Daredevils',
-         'Sunrisers Hyderabad','Deccan Chargers','Delhi Capitals','Pune Warriors',
-         'Gujarat Lions','Punjab Kings','Gujarat Titans','Rising Pune Supergiant',
-         'Lucknow Super Giants','Kochi Tuskers Kerala','Rising Pune Supergiants']
+venues = ['Sheikh Zayed Stadium', 'Arun Jaitley Stadium', 'Wankhede Stadium','MA Chidambaram Stadium','Himachal Pradesh Cricket Association Stadium',
+         'M Chinnaswamy Stadium', 'Dubai International Cricket Stadium','Dr DY Patil Sports Academy', 'Feroz Shah Kotla',
+         'Punjab Cricket Association IS Bindra Stadium','Saurashtra Cricket Association Stadium','Rajiv Gandhi International Stadium',
+         'Sawai Mansingh Stadium','Kingsmead', 'Maharashtra Cricket Association Stadium','New Wanderers Stadium', 'Eden Gardens', 'SuperSport Park',
+         "St George's Park", 'Subrata Roy Sahara Stadium','Sharjah Cricket Stadium', 'Vidarbha Cricket Association Stadium','Zayed Cricket Stadium',
+         'Narendra Modi Stadium','Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium','Holkar Cricket Stadium', 'JSCA International Stadium Complex',
+         'Sardar Patel Stadium','Shaheed Veer Narayan Singh International Stadium','Brabourne Stadium', 'De Beers Diamond Oval','OUTsurance Oval',
+         'Nehru Stadium', 'Newlands', 'Barabati Stadium', 'Green Park','Buffalo Park']
 
-venues = ["Wankhede Stadium","Eden Gardens","M Chinnaswamy Stadium","MA Chidambaram Stadium",
-         "Rajiv Gandhi International Stadium","Feroz Shah Kotla","Punjab Cricket Association IS Bindra Stadium",
-         "Dubai International Cricket Stadium","Sawai Mansingh Stadium","Dr DY Patil Sports Academy",
-         "Maharashtra Cricket Association Stadium","Sheikh Zayed Stadium","Sharjah Cricket Stadium",
-         "Brabourne Stadium","Arun Jaitley Stadium","Subrata Roy Sahara Stadium",
-         "Kingsmead","Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium","Sardar Patel Stadium",
-         "SuperSport Park","Saurashtra Cricket Association Stadium","Himachal Pradesh Cricket Association Stadium",
-         "Holkar Cricket Stadium","New Wanderers Stadium","Zayed Cricket Stadium",
-         "Barabati Stadium","St George's Park","JSCA International Stadium Complex",
-         "Narendra Modi Stadium","Newlands","Shaheed Veer Narayan Singh International Stadium",
-         "Nehru Stadium","Green Park","Vidarbha Cricket Association Stadium","De Beers Diamond Oval",
-         "Buffalo Park","OUTsurance Oval"]
+teams = ['Mumbai Indians', 'Delhi Capitals', 'Chennai Super Kings','Rajasthan Royals', 'Delhi Daredevils', 'Kings XI Punjab',
+         'Kolkata Knight Riders', 'Royal Challengers Bangalore','Sunrisers Hyderabad', 'Deccan Chargers', 'Pune Warriors',
+         'Rising Pune Supergiants', 'Gujarat Lions', 'Kochi Tuskers Kerala','Rising Pune Supergiant']
+
 overs = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
 balls = [1,2,3,4,5,6]
 
@@ -64,15 +59,15 @@ with col_7:
 last_5over_runs = st.number_input('Runs scored in last 5 overs')
 
 if st.button('Predict Score'):
-    balls_done = (over*6) + over_ball
+    over_done = (over) + (over_ball/6)
     wickets_left = 10 - wickets
-    crr = (current_score*6)/balls_done
+    crr = (current_score)/over_done
 
     input_df = pd.DataFrame({
-        'venue': [Venue],
-        'innings': [innings],
         'batting_team': [batting_team],
         'bowling_team': [bowling_team],
+        'venue': [Venue],
+        'innings': [innings],
         'current_score': [current_score],
         'wickets': [wickets],
         'over': [over],
