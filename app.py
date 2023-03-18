@@ -18,7 +18,7 @@ venues = ['Sheikh Zayed Stadium', 'Arun Jaitley Stadium', 'Wankhede Stadium','MA
          'Sardar Patel Stadium','Shaheed Veer Narayan Singh International Stadium','Brabourne Stadium', 'De Beers Diamond Oval','OUTsurance Oval',
          'Nehru Stadium', 'Newlands', 'Barabati Stadium', 'Green Park','Buffalo Park']
 
-teams = ['Mumbai Indians', 'Delhi Capitals', 'Chennai Super Kings','Rajasthan Royals', 'Delhi Daredevils', 'Kings XI Punjab',
+teams = ['Mumbai Indians', 'Delhi Capitals', 'Chennai Super Kings','Rajasthan Royals', 'Delhi Daredevils', 'Punjab Kings',
          'Kolkata Knight Riders', 'Royal Challengers Bangalore','Sunrisers Hyderabad', 'Deccan Chargers', 'Pune Warriors',
          'Rising Pune Supergiants', 'Gujarat Lions', 'Kochi Tuskers Kerala','Rising Pune Supergiant']
 
