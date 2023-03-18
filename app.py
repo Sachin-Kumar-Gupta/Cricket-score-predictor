@@ -9,18 +9,13 @@ import bz2
 with bz2.BZ2File('pickle.pkl.bz2', 'r') as f:
     pl = pickle.load(f)
 
-venues = ['Sheikh Zayed Stadium', 'Arun Jaitley Stadium', 'Wankhede Stadium','MA Chidambaram Stadium','Himachal Pradesh Cricket Association Stadium',
-         'M Chinnaswamy Stadium', 'Dubai International Cricket Stadium','Dr DY Patil Sports Academy', 'Feroz Shah Kotla',
-         'Punjab Cricket Association IS Bindra Stadium','Saurashtra Cricket Association Stadium','Rajiv Gandhi International Stadium',
-         'Sawai Mansingh Stadium','Kingsmead', 'Maharashtra Cricket Association Stadium','New Wanderers Stadium', 'Eden Gardens', 'SuperSport Park',
-         "St George's Park", 'Subrata Roy Sahara Stadium','Sharjah Cricket Stadium', 'Vidarbha Cricket Association Stadium','Zayed Cricket Stadium',
-         'Narendra Modi Stadium','Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium','Holkar Cricket Stadium', 'JSCA International Stadium Complex',
-         'Sardar Patel Stadium','Shaheed Veer Narayan Singh International Stadium','Brabourne Stadium', 'De Beers Diamond Oval','OUTsurance Oval',
-         'Nehru Stadium', 'Newlands', 'Barabati Stadium', 'Green Park','Buffalo Park']
+venues = ['Eden Gardens', 'MA Chidambaram Stadium','Maharashtra Cricket Association Stadium', 'Arun Jaitley Stadium','Wankhede Stadium', 'M Chinnaswamy Stadium',
+          'Narendra Modi Stadium','Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium','Punjab Cricket Association IS Bindra Stadium','Rajiv Gandhi International Stadium', 'Brabourne Stadium',
+          'Shaheed Veer Narayan Singh International Stadium','JSCA International Stadium Complex','Saurashtra Cricket Association Stadium', 'Green Park',
+          'Holkar Cricket Stadium', 'Sawai Mansingh Stadium','Sheikh Zayed Stadium', 'Dubai International Cricket Stadium','Sharjah Cricket Stadium']
 
-teams = ['Mumbai Indians', 'Delhi Capitals', 'Chennai Super Kings','Rajasthan Royals', 'Delhi Daredevils', 'Punjab Kings',
-         'Kolkata Knight Riders', 'Royal Challengers Bangalore','Sunrisers Hyderabad', 'Deccan Chargers', 'Pune Warriors',
-         'Rising Pune Supergiants', 'Gujarat Lions', 'Kochi Tuskers Kerala','Rising Pune Supergiant']
+teams = ['Mumbai Indians', 'Kolkata Knight Riders', 'Chennai Super Kings','Delhi Capitals', 'Rajasthan Royals', 'Punjab Kings','Sunrisers Hyderabad',
+         'Royal Challengers Bangalore','Rising Pune Supergiants', 'Gujarat Titans']
 
 overs = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
 balls = [1,2,3,4,5,6]
