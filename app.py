@@ -40,11 +40,11 @@ with col_4:
 with col_5:
     over_ball = st.selectbox('Ball of the over', sorted(balls))
 with col_6:
-    wickets = st.number_input('Wickets out')
+    wickets = st.number_input('Wickets out', value=0, step=1, max_value = 10)
 with col_7:
     innings = st.radio('Inning', [1, 2], index=0)
     
-last_5over_runs = st.number_input('Runs scored in last 5 overs')
+last_5over_runs = st.number_input('Runs scored in last 5 overs', value=0,step=1)
 
 if st.button('Predict Score'):
     over_done = (over) + (over_ball/6)
