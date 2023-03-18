@@ -6,15 +6,8 @@ import xgboost
 from xgboost import XGBRegressor
 import zipfile
 
-# specify the path of the zip file
-zip_path = 'pl.zip'
-
-# create a ZipFile object
-with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-    # extract all files to a directory
-    zip_ref.extractall()
-
-pl = pickle.load(open('pl.pkl','rb'))
+with bz2.BZ2File('pickle.pkl.bz2', 'r') as f:
+    pl = pickle.load(f)
 
 venues = ['Sheikh Zayed Stadium', 'Arun Jaitley Stadium', 'Wankhede Stadium','MA Chidambaram Stadium','Himachal Pradesh Cricket Association Stadium',
          'M Chinnaswamy Stadium', 'Dubai International Cricket Stadium','Dr DY Patil Sports Academy', 'Feroz Shah Kotla',
